@@ -1,0 +1,17 @@
+on: push
+jobs:
+  build-node:
+    runs-on: ubuntu-latest
+    container:
+      image: node:16
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Crear archivo .env
+        run: echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
+        
+      - name: Instalar dependencias
+        run: npm install
+        
+      - name: Ejecutar aplicación
+        run: node app.js
