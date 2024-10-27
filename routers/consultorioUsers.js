@@ -35,7 +35,7 @@ consultorioRouter.use(express.json());
 /**
  * @swagger
  *  /api/users:
- *  post:
+ *  get:
  *      summary: create a new user
  *      tags: [user]
  *      requestBody:
@@ -43,9 +43,48 @@ consultorioRouter.use(express.json());
  */
 router.get('/',usuarioController.readUsers);
 
+/**
+ * @swagger
+ *  /api/users:
+ *  post:
+ *      summary: create a new user
+ *      tags: [user]
+ *      requestBody:
+ *          required: true
+ */
 router.post('/',usuarioController.createUser);
+
+/**
+ * @swagger
+ *  /api/login:
+ *  post:
+ *      summary: create a new user
+ *      tags: [user]
+ *      requestBody:
+ *          required: true
+ */
 router.post('/login', usuarioController.login);
+
+/**
+ * @swagger
+ *  /api/id:
+ *  put:
+ *      summary: create a new user
+ *      tags: [user]
+ *      requestBody:
+ *          required: true
+ */
 router.put('/:id',usuarioController.updateUser);
+
+/**
+ * @swagger
+ *  /api/id:
+ *  delete:
+ *      summary: create a new user
+ *      tags: [user]
+ *      requestBody:
+ *          required: true
+ */
 router.delete('/:id',usuarioController.deleteUser);
 
 module.exports = router;
