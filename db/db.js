@@ -3,10 +3,18 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+/*
 const USER = process.env.DB_USER;
 const PASSWORD = process.env.DB_PASSWORD;
 const HOST = process.env.DB_HOST;
 const DB_NAME = process.env.DB_NAME;
+*/
+
+const USER = "cmfabregat";
+const PASSWORD = "rOnz4ANr6IU1c8tT";
+const HOST = "cluster0.nhouwym.mongodb.net";
+const DB_NAME = "DentisApp";
+
 
 // Construir la URI con el parámetro adicional
 const URI = `mongodb+srv://${USER}:${PASSWORD}@${HOST}/${DB_NAME}?retryWrites=true&w=majority`;
